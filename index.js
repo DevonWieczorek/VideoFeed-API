@@ -1,17 +1,9 @@
 const port = process.env.PORT || 3000
 
 const express = require('express')
-//const queryString = require('query-string')
 const helmet = require('helmet')
 
 const app = express()
-
-/*
-const urlParamsToString = (location) => {
-    const urlParams = queryString.parse(location.search);
-    return `?${queryString.stringify(urlParams)}`;
-}
-*/
 
 // add some security-related headers to the response
 app.use(helmet())
@@ -21,15 +13,18 @@ app.use(express.json());
 app.get("/", (req, res, next) => {
     let page = req.query.page;
     let search = req.query.q;
-    //let category = req.query.category;
-    //let queryObj = {'page': page, 'search': search, 'category': category};
-
-    //let concatQueries = queryString.stringify(queryObj);
-    //queryObj['queryString'] = `?${concatQueries}`;
+    let category = req.query.category;
+    let concatQueries = `?search=${search}&page=${page}&category=${category}`;
+    let queryObj = {
+        'page': page,
+        'search': search,
+        'category': category,
+        'queryString': concatQueries;
+    };
 
     // Send back the response
     res.status(200);
-    res.json({'page': page, 'search': search});
+    res.json(queryObj);
 });
 
 app.post('/', function(request, response) {
