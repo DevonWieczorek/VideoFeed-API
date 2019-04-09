@@ -17,7 +17,7 @@ app.get("/", (req, res, next) => {
 
 app.post('/', function(request, response) {
     // Send back the response
-    response.send(request.body);
+    response.json(request.body);
 });
 
 app.listen(port, err => {
