@@ -22,8 +22,8 @@ app.get("/", (req, res, next) => {
     let category = req.query.category;
     let queryObj = {'page': page, 'search': search, 'category': category};
 
-    //let queryString = queryString.stringify(queryObj);
-    //queryObj['queryString'] = queryString;
+    let concatQueries = queryString.stringify(queryObj);
+    queryObj['queryString'] = concatQueries;
 
     // Send back the response
     res.json(queryObj);
