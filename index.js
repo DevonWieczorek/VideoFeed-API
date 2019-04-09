@@ -11,8 +11,11 @@ app.use(helmet())
 app.use(express.json());
 
 app.get("/", (req, res, next) => {
+    let page = req.query.page;
+    let search = req.query.q;
+
     // Send back the response
-    res.send(req.body);
+    res.json({'page': page, 'search': search});
 });
 
 app.post('/', function(request, response) {
