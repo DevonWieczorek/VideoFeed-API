@@ -26,11 +26,13 @@ app.get("/", (req, res, next) => {
     //queryObj['queryString'] = `?${concatQueries}`;
 
     // Send back the response
+    res.status(200);
     res.json({'page': page, 'search': search});
 });
 
 app.post('/', function(request, response) {
     // Send back the response
+    res.status(200);
     response.json(request.body);
 });
 
