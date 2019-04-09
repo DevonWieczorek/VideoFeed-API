@@ -15,13 +15,13 @@ app.listen(port, err => {
     console.log(`> Ready On Server http://localhost:${port}`)
 });
 
-app.get("/get", (req, res, next) => {
+app.get("*", (req, res, next) => {
     res.json({
         "version": process.env.VERSION
     });
 });
 
-app.post('/post', function(request, response) {
+app.post('*', function(request, response) {
     response.send(request.body);
 });
 
