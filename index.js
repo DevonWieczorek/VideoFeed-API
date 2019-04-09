@@ -19,7 +19,7 @@ app.get("/", (req, res, next) => {
         'page': page,
         'search': search,
         'category': category,
-        'queryString': concatQueries;
+        'queryString': concatQueries
     };
 
     // Send back the response
