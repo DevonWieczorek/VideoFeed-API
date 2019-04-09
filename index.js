@@ -1,15 +1,17 @@
 const port = process.env.PORT || 3000
 
 const express = require('express')
-const queryString = require('query-string')
+//const queryString = require('query-string')
 const helmet = require('helmet')
 
 const app = express()
 
-export const urlParamsToString = (location) => {
+/*
+const urlParamsToString = (location) => {
     const urlParams = queryString.parse(location.search);
     return `?${queryString.stringify(urlParams)}`;
 }
+*/
 
 // add some security-related headers to the response
 app.use(helmet())
@@ -32,7 +34,7 @@ app.get("/", (req, res, next) => {
 
 app.post('/', function(request, response) {
     // Send back the response
-    res.status(200);
+    response.status(200);
     response.json(request.body);
 });
 
