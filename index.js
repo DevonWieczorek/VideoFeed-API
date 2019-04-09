@@ -13,9 +13,10 @@ app.use(express.json());
 app.get("/", (req, res, next) => {
     let page = req.query.page;
     let search = req.query.q;
+    let category = req.query.category;
 
     // Send back the response
-    res.json({'page': page, 'search': search});
+    res.json({'page': page, 'search': search, 'category': category});
 });
 
 app.post('/', function(request, response) {
