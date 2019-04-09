@@ -16,12 +16,12 @@ app.listen(port, err => {
 });
 
 app.get("*", (req, res, next) => {
-    res.json({
-        "version": process.env.VERSION
-    });
+    // Send back the response
+    res.json(req.body);
 });
 
 app.post('*', function(request, response) {
+    // Send back the response 
     response.send(request.body);
 });
 
