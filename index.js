@@ -20,13 +20,13 @@ app.get("/", (req, res, next) => {
     let page = req.query.page;
     let search = req.query.q;
     let category = req.query.category;
-    let queryObj = {'page': page, 'search': search, 'category': category};
+    //let queryObj = {'page': page, 'search': search, 'category': category};
 
     //let concatQueries = queryString.stringify(queryObj);
     //queryObj['queryString'] = `?${concatQueries}`;
 
     // Send back the response
-    res.json(queryObj);
+    res.json({'page': page, 'search': search, 'category': category});
 });
 
 app.post('/', function(request, response) {
