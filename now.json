@@ -13,6 +13,5 @@
         },
         "src": "/.*",
         "dest": "/index.js"
-    }],
-    "alias": ["https://videofeed-api-git-master.devonwieczorek93.now.sh/"]
+    }]
 }
